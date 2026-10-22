@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="vi"><head><meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f6f0e7">
+    <title>Ý Nhi & Khánh Huy | Thiệp cưới</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="cover" class="cover">
+    <div class="envelope">
+        <span class="eyebrow">THE WEDDING OF</span>
+        <h1 class="couple-names">
+        <span class="bride-name">Ý Nhi</span>
+        <span class="ampersand">&amp;</span>
+        <span class="groom-name">Khánh Huy</span>
+    </h1>
+    <div class="divider">✦</div>
+    <p>Trân trọng kính mời bạn đến chung vui</p>
+    <button id="openBtn" class="button">MỞ THIỆP CƯỚI ♡</button>
+    </div>
+</div>
+<main id="main" class="hidden">
+    <section class="hero">
+        <div class="hero-inner">
+            <span class="eyebrow">SAVE THE DATE</span>
+            <h1 class="couple-names">
+            <span class="bride-name">Ý Nhi</span>
+            <span class="ampersand">&</span>
+            <span class="groom-name">Khánh Huy</span>
+        </h1>
+            <p>Hai trái tim, một hành trình</p>
+            <div class="hero-date">20 · 12 · 2026</div>
+            <a class="scroll-link" href="#story">Cuộn để khám phá ↓</a>
+        </div>
+    </section>
+<section id="story" class="section intro reveal">
+    <div class="ornament">❦</div>
+    <span class="eyebrow">WE ARE GETTING MARRIED</span>
+    <h2>Chuyện chúng mình</h2>
+    <p>Giữa muôn vàn cuộc gặp gỡ, chúng mình đã tìm thấy nhau. Thật hạnh phúc khi có bạn đồng hành trong ngày đặc biệt này.</p>
+    <div class="names"><div>
+        <span>CHÚ RỂ</span><h3>Phan Lê Khánh Huy</h3>
+        <small>Con ông Phan Khánh Vinh & bà Lê Hòa Thắm</small>
+    </div>
+    <b>♡</b>
+    <div>
+        <span>CÔ DÂU</span><h3>Nguyễn Ý Nhi</h3>
+        <small>Con ông Nguyễn thanh Xuyên & bà Huỳnh Bích Tuyền</small>
+    </div></div>
+</section>
+<section class="section event reveal">
+    <span class="eyebrow">YOU ARE INVITED</span>
+    <h2>Trân trọng kính mời</h2>
+    <p>Đến dự buổi tiệc chung vui cùng gia đình chúng mình</p>
+    <div class="date-card"><div class="month">THÁNG 11 / 2026</div>
+    <div class="calendar">
+        <span>CHỦ NHẬT</span>
+        <strong>20</strong>
+        <span>11:00 TRƯA</span>
+    </div>
+    <div class="place">TẠI GIA</div>
+    <p>Ấp 4, Thị Trấn Gành Hào, Huyện Đông Hải, Tỉnh Bạc Liêu</p>
+    <a class="button outline" target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/search/?api=1&query=9.044981043691692,105.41350910140181">XEM BẢN ĐỒ ↗</a>
+    </div>
+</section>
+<section class="section countdown-section reveal">
+    <span class="eyebrow">COUNTING DOWN</span>
+    <h2>Đếm ngược ngày hạnh phúc</h2>
+    <div id="countdown" class="countdown"><div>
+        <strong id="days">00</strong>
+        <span>Ngày</span>
+    </div><div>
+        <strong id="hours">00</strong>
+        <span>Giờ</span>
+    </div>
+    <div>
+        <strong id="minutes">00</strong>
+        <span>Phút</span>
+    </div>
+    <div>
+        <strong id="seconds">00</strong>
+        <span>Giây</span>
+    </div>
+</div>
+</section>
+<section class="section gallery reveal">
+    <span class="eyebrow">OUR MEMORIES</span>
+    <h2>Album kỷ niệm</h2>
+    <p>Thay ảnh trong thư mục <code>assets</code> bằng ảnh cưới của bạn.</p>
+    <div class="gallery-grid">
+        <img src="assets/photo1.svg" alt="Ảnh cưới 1">
+        <img src="assets/photo2.svg" alt="Ảnh cưới 2">
+        <img src="assets/photo3.svg" alt="Ảnh cưới 3">
+    </div>
+</section>
+<section class="section rsvp reveal">
+    <span class="eyebrow">RSVP</span>
+    <h2>Xác nhận tham dự</h2>
+    <p>Sự hiện diện của bạn là niềm vui của chúng mình.</p>
+    <form id="rsvpForm">
+        <label>Họ và tên<input id="guestName" required maxlength="80" placeholder="Tên của bạn"></label>
+        <label>Bạn sẽ tham dự chứ?
+            <select id="attendance">
+                <option value="Có, tôi sẽ tham dự">Có, tôi sẽ tham dự</option>
+                <option value="Rất tiếc, tôi không thể tham dự">Rất tiếc, tôi không thể tham dự</option>
+            </select>
+        </label>
+        <label>Lời chúc
+            <textarea id="wish" maxlength="500" rows="4" placeholder="Gửi lời chúc đến cô dâu chú rể..."></textarea>
+        </label>
+    <button class="button" type="submit">GỬI LỜI CHÚC ♡</button>
+    </form>
+    <p id="formMessage" role="status"></p>
+    <div class="wishes">
+        <h3>Lời chúc yêu thương</h3>
+        <div id="wishList"></div>
+    </div>
+</section>
+<footer>
+    <div class="ornament">❦</div>
+
+    <h2 class="footer-names">
+        <span>Ý Nhi</span>
+        <span class="ampersand">&amp;</span>
+        <span>Khánh Huy</span>
+    </h2>
+
+    <p>Thank you for being part of our story!</p>
+    <small>20.11.2026</small>
+</footer>
+</main>
+<button id="musicBtn" class="music hidden" title="Bật/tắt nhạc">♫</button>
+<audio id="music" loop preload="none" src="assets/music.mp3"></audio>
+<script src="script.js"></script></body></html>

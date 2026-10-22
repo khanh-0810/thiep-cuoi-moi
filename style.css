@@ -1,0 +1,547 @@
+:root {
+  --cream: #f6f0e7;
+  --brown: #6b5348;
+  --gold: #b49a73;
+  --dark: #392d29;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--brown);
+  font-family: Montserrat, sans-serif;
+  line-height: 1.8;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+h1,
+h2 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 400;
+}
+
+h2 {
+  font-size: clamp(2rem, 5vw, 3.3rem);
+  margin: 12px 0 24px;
+}
+
+a {
+  color: inherit;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.eyebrow {
+  font-size: 11px;
+  letter-spacing: 4px;
+  font-weight: 700;
+  color: var(--gold);
+}
+
+.button {
+  border: 1px solid var(--brown);
+  background: var(--brown);
+  color: white;
+  cursor: pointer;
+  padding: 13px 30px;
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-decoration: none;
+  display: inline-block;
+  transition: 0.25s;
+}
+
+.button:hover {
+  background: var(--gold);
+  border-color: var(--gold);
+}
+
+.outline {
+  background: transparent;
+  color: var(--brown);
+}
+
+.cover {
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+  background: radial-gradient(circle at center, #fffdf9, #e8dccb);
+  display: grid;
+  place-items: center;
+  padding: 20px;
+}
+
+.envelope {
+  width: min(520px, 100%);
+  min-height: 460px;
+  border: 1px solid #c6b69f;
+  outline: 1px solid #c6b69f;
+  outline-offset: -13px;
+  background: #fffaf1;
+  box-shadow: 0 25px 70px #65503d24;
+  text-align: center;
+  padding: 85px 24px 50px;
+  position: relative;
+}
+
+.envelope:before,
+.envelope:after {
+  content: '❦';
+  position: absolute;
+  color: var(--gold);
+  font-size: 32px;
+}
+
+.envelope:before {
+  top: 28px;
+  left: 32px;
+}
+
+.envelope:after {
+  bottom: 20px;
+  right: 32px;
+  transform: rotate(180deg);
+}
+
+.envelope h1,
+.hero h1 {
+  font-family: 'Great Vibes', cursive;
+  font-size: clamp(4rem, 12vw, 7rem);
+  font-weight: 400;
+  margin: 20px 0 0;
+  line-height: 1.25;
+}
+
+.envelope h1 span,
+.hero h1 span {
+  font-size: 0.65em;
+  color: var(--gold);
+}
+
+.divider,
+.ornament {
+  color: var(--gold);
+  font-size: 25px;
+}
+
+.envelope p {
+  font-size: 13px;
+  margin: 18px 0 30px;
+}
+
+.hero {
+  min-height: 100svh;
+  background: linear-gradient(135deg, #6c554b99, #201812bb), url('assets/hero.svg') center/cover;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  color: #fff;
+  padding: 40px 16px;
+}
+
+.hero-inner {
+  border: 1px solid #ffffff70;
+  width: min(900px, 100%);
+  padding: 85px 15px;
+}
+
+.hero h1 {
+  font-size: clamp(5rem, 14vw, 10rem);
+  margin: 10px 0;
+}
+
+.hero .eyebrow {
+  color: #eadac0;
+}
+
+.hero-date {
+  font-size: 17px;
+  letter-spacing: 6px;
+  margin: 26px 0;
+}
+
+.scroll-link {
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-decoration: none;
+}
+
+.section {
+  padding: 100px 20px;
+  text-align: center;
+}
+
+.section > p {
+  max-width: 650px;
+  margin: 0 auto 30px;
+  font-size: 14px;
+}
+
+.intro,
+.gallery {
+  background: #fffaf3;
+}
+
+.names {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  margin: 60px auto 0;
+  max-width: 850px;
+}
+
+.names > div {
+  flex: 1;
+}
+
+.names span {
+  font-size: 11px;
+  letter-spacing: 3px;
+}
+
+.names h3 {
+  font-family: 'Playfair Display';
+  font-size: 25px;
+  font-weight: 400;
+  margin: 15px 0;
+}
+
+.names small {
+  font-size: 12px;
+}
+
+.names b {
+  font-size: 40px;
+  color: var(--gold);
+  font-weight: 400;
+}
+
+.event {
+  background: #eee5d8;
+}
+
+.date-card {
+  margin: 35px auto 0;
+  background: #fffaf3;
+  border: 1px solid #d8c9b6;
+  padding: 45px 25px;
+  max-width: 510px;
+}
+
+.month {
+  letter-spacing: 4px;
+  font-size: 12px;
+}
+
+.calendar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 22px;
+  margin: 20px 0;
+}
+
+.calendar span {
+  font-size: 12px;
+  border-top: 1px solid;
+  border-bottom: 1px solid;
+  padding: 10px 0;
+}
+
+.calendar strong {
+  font-family: 'Playfair Display';
+  font-size: 90px;
+  line-height: 1.2;
+  font-weight: 400;
+}
+
+.place {
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.date-card p {
+  font-size: 13px;
+  margin: 8px 0 24px;
+}
+
+.countdown-section {
+  background: #5c4b43;
+  color: #fff;
+}
+
+.countdown-section .eyebrow {
+  color: #e5c9a5;
+}
+
+.countdown {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.countdown > div {
+  min-width: 105px;
+  border: 1px solid #ffffff70;
+  padding: 20px 12px;
+}
+
+.countdown strong {
+  font-family: 'Playfair Display';
+  display: block;
+  font-size: 38px;
+  font-weight: 400;
+}
+
+.countdown span {
+  font-size: 12px;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  max-width: 1000px;
+  margin: 40px auto 0;
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: 380px;
+  object-fit: cover;
+}
+
+.gallery-grid img:nth-child(2) {
+  margin-top: 35px;
+}
+
+.rsvp {
+  background: #eee5d8;
+}
+
+form {
+  max-width: 540px;
+  text-align: left;
+  margin: 35px auto;
+}
+
+label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+input,
+select,
+textarea {
+  display: block;
+  width: 100%;
+  margin-top: 8px;
+  padding: 12px;
+  border: 1px solid #c7b8a5;
+  background: #fffaf3;
+  color: var(--dark);
+  outline-color: var(--gold);
+}
+
+form button {
+  width: 100%;
+}
+
+#formMessage {
+  font-size: 13px;
+}
+
+.wishes {
+  max-width: 540px;
+  margin: 40px auto 0;
+  text-align: left;
+}
+
+.wishes h3 {
+  font-family: 'Playfair Display';
+  font-size: 24px;
+  font-weight: 400;
+}
+
+.wish-item {
+  background: #fffaf3;
+  border-left: 3px solid var(--gold);
+  padding: 14px 20px;
+  margin-bottom: 12px;
+  font-size: 13px;
+  overflow-wrap: anywhere;
+}
+
+.wish-item strong {
+  display: block;
+}
+
+footer {
+  padding: 70px 20px;
+  text-align: center;
+  background: #4d3c35;
+  color: white;
+}
+
+footer h2 {
+  font-family: 'Great Vibes';
+  font-size: 60px;
+  margin: 10px;
+}
+
+footer p {
+  font-size: 12px;
+}
+
+.music {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1px solid var(--gold);
+  background: #fffaf3;
+  color: var(--brown);
+  z-index: 5;
+  cursor: pointer;
+  font-size: 24px;
+  box-shadow: 0 4px 18px #0002;
+}
+
+.music.playing {
+  background: var(--brown);
+  color: white;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(25px);
+  transition: opacity 0.7s, transform 0.7s;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: none;
+}
+
+@media (max-width: 650px) {
+  .section {
+    padding: 70px 20px;
+  }
+
+  .names {
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 35px;
+  }
+
+  .names b {
+    font-size: 28px;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .gallery-grid img {
+    height: 230px;
+  }
+
+  .gallery-grid img:nth-child(2) {
+    margin-top: 0;
+  }
+
+  .gallery-grid img:last-child {
+    grid-column: 1 / -1;
+    height: 270px;
+  }
+
+  .calendar {
+    gap: 12px;
+  }
+
+  .calendar strong {
+    font-size: 70px;
+  }
+
+  .countdown {
+    gap: 8px;
+  }
+
+  .countdown > div {
+    min-width: 70px;
+    padding: 10px 5px;
+  }
+
+  .countdown strong {
+    font-size: 29px;
+  }
+
+  .hero-inner {
+    padding: 60px 10px;
+  }
+
+  .hero-date {
+    font-size: 13px;
+  }
+  /*moi them*/
+ .couple-names {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center;
+    text-align: center;
+}
+
+ .couple-names .bride-name,
+ .couple-names .ampersand,
+ .couple-names .groom-name {
+    display: block !important;
+    width: 100%;
+}
+
+ .couple-names .ampersand {
+    margin: 5px 0;
+    font-size: 0.7em;
+}
+.footer-names {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    line-height: 1.3;
+}
+
+.footer-names .ampersand {
+    font-size: 0.7em;
+    font-weight: normal;
+}
+}
