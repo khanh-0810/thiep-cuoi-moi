@@ -2,7 +2,7 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
 import { getFirestore, collection, addDoc, query, onSnapshot, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
 
-// Cấu hình Firebase cho dự án thiep-cuoi-ynhi-khanhhuy
+// Cấu hình Firebase dự án thiep-cuoi-ynhi-khanhhuy
 const firebaseConfig = {
   apiKey: "AIzaSyBzTS4TDWYSmJkYOLLePmq_Tc95eRqP-xU",
   authDomain: "thiep-cuoi-ynhi-khanhhuy.firebaseapp.com",
@@ -13,11 +13,39 @@ const firebaseConfig = {
   measurementId: "G-R2CZBTP03S"
 };
 
-// Khởi tạo Firebase và Firestore
+// Khởi tạo Firebase
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
-// Ngày cưới dùng để đếm ngược (giờ địa phương Việt Nam):
+// CẤU HÌNH SLIDER 3D
+document.addEventListener("DOMContentLoaded", () => {
+    if (typeof Swiper !== 'undefined') {
+        new Swiper(".mySwiper", {
+            effect: "coverflow",
+            grabCursor: true,
+            centeredSlides: true,
+            slidesPerView: "auto",
+            loop: true,
+            coverflowEffect: {
+                rotate: 25,
+                stretch: 0,
+                depth: 150,
+                modifier: 1,
+                slideShadows: true,
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+        });
+    }
+});
+
+// NGÀY CƯỚI ĐẾM NGƯỢC
 const weddingDate = new Date('2026-12-20T11:00:00+07:00');
 const cover = document.getElementById('cover');
 const main = document.getElementById('main');
@@ -26,7 +54,6 @@ const musicBtn = document.getElementById('musicBtn');
 
 async function startMusic() {
     if (!music) return;
-
     music.volume = 0.7;
     const startTime = 12.9;
 
@@ -38,15 +65,9 @@ async function startMusic() {
                 music.load();
             });
         }
-
-        music.currentTime = Math.min(
-            startTime,
-            Math.max(0, music.duration - 0.5)
-        );
-
+        music.currentTime = Math.min(startTime, Math.max(0, music.duration - 0.5));
         await music.play();
         musicBtn?.classList.add('playing');
-
     } catch (error) {
         console.error('Lỗi phát nhạc:', error);
     }
@@ -88,19 +109,17 @@ setInterval(updateCountdown, 1000);
 const observer = new IntersectionObserver(entries => entries.forEach(entry => { if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target);} }), {threshold:.12});
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-// ================= HIỂN THỊ LỜI CHÚC TỪ FIRESTORE =================
+// ================= LỜI CHÚC TỪ FIRESTORE =================
 const wishList = document.getElementById('wishList');
-
 const q = query(collection(db, 'wishes'));
+
 onSnapshot(q, (snapshot) => {
     wishList.replaceChildren();
-    
     const wishes = [];
     snapshot.forEach((doc) => {
         wishes.push({ id: doc.id, ...doc.data() });
     });
 
-    // Sắp xếp lời chúc mới nhất lên đầu
     wishes.sort((a, b) => {
         const timeA = a.createdAt?.toDate ? a.createdAt.toDate() : new Date(0);
         const timeB = b.createdAt?.toDate ? b.createdAt.toDate() : new Date(0);
@@ -115,7 +134,6 @@ onSnapshot(q, (snapshot) => {
         return;
     }
 
-    // Hiển thị danh sách lời chúc theo đúng cấu trúc CSS `.wish-item` của bạn
     wishes.slice(0, 15).forEach(item => {
         const div = document.createElement('div');
         div.className = 'wish-item';
@@ -131,13 +149,11 @@ onSnapshot(q, (snapshot) => {
     });
 });
 
-// GỬI LỜI CHÚC LÊN FIRESTORE
 document.getElementById('rsvpForm').addEventListener('submit', async event => {
     event.preventDefault();
     const name = document.getElementById('guestName').value.trim();
     const attendance = document.getElementById('attendance').value;
     const wish = document.getElementById('wish').value.trim();
-    
     if (!name) return;
 
     const formMessage = document.getElementById('formMessage');
@@ -154,7 +170,7 @@ document.getElementById('rsvpForm').addEventListener('submit', async event => {
         formMessage.style.color = 'var(--brown)';
         event.target.reset();
     } catch (error) {
-        console.error('Lỗi khi gửi lời chúc lên Firestore:', error);
+        console.error('Lỗi khi gửi lời chúc:', error);
         formMessage.textContent = 'Không thể gửi lời chúc lúc này, vui lòng thử lại sau.';
         formMessage.style.color = 'red';
     }

@@ -3,6 +3,7 @@
   --brown: #6b5348;
   --gold: #b49a73;
   --dark: #392d29;
+  --dark-green: #1b3c29;
 }
 
 * {
@@ -21,15 +22,11 @@ body {
   line-height: 1.8;
 }
 
-h1,
-h2,
-h3,
-p {
+h1, h2, h3, p {
   margin-top: 0;
 }
 
-h1,
-h2 {
+h1, h2 {
   font-family: 'Playfair Display', serif;
   font-weight: 400;
 }
@@ -43,10 +40,7 @@ a {
   color: inherit;
 }
 
-button,
-input,
-select,
-textarea {
+button, input, select, textarea {
   font: inherit;
 }
 
@@ -107,27 +101,17 @@ textarea {
   position: relative;
 }
 
-.envelope:before,
-.envelope:after {
+.envelope:before, .envelope:after {
   content: '❦';
   position: absolute;
   color: var(--gold);
   font-size: 32px;
 }
 
-.envelope:before {
-  top: 28px;
-  left: 32px;
-}
+.envelope:before { top: 28px; left: 32px; }
+.envelope:after { bottom: 20px; right: 32px; transform: rotate(180deg); }
 
-.envelope:after {
-  bottom: 20px;
-  right: 32px;
-  transform: rotate(180deg);
-}
-
-.envelope h1,
-.hero h1 {
+.envelope h1, .hero h1 {
   font-family: 'Great Vibes', cursive;
   font-size: clamp(4rem, 12vw, 7rem);
   font-weight: 400;
@@ -135,14 +119,12 @@ textarea {
   line-height: 1.25;
 }
 
-.envelope h1 span,
-.hero h1 span {
+.envelope h1 span, .hero h1 span {
   font-size: 0.65em;
   color: var(--gold);
 }
 
-.divider,
-.ornament {
+.divider, .ornament {
   color: var(--gold);
   font-size: 25px;
 }
@@ -173,24 +155,12 @@ textarea {
   margin: 10px 0;
 }
 
-.hero .eyebrow {
-  color: #eadac0;
-}
-
-.hero-date {
-  font-size: 17px;
-  letter-spacing: 6px;
-  margin: 26px 0;
-}
-
-.scroll-link {
-  font-size: 12px;
-  letter-spacing: 2px;
-  text-decoration: none;
-}
+.hero .eyebrow { color: #eadac0; }
+.hero-date { font-size: 17px; letter-spacing: 6px; margin: 26px 0; }
+.scroll-link { font-size: 12px; letter-spacing: 2px; text-decoration: none; }
 
 .section {
-  padding: 100px 20px;
+  padding: 80px 20px;
   text-align: center;
 }
 
@@ -200,10 +170,7 @@ textarea {
   font-size: 14px;
 }
 
-.intro,
-.gallery {
-  background: #fffaf3;
-}
+.intro { background: #fffaf3; }
 
 .names {
   display: flex;
@@ -214,35 +181,13 @@ textarea {
   max-width: 850px;
 }
 
-.names > div {
-  flex: 1;
-}
+.names > div { flex: 1; }
+.names span { font-size: 11px; letter-spacing: 3px; }
+.names h3 { font-family: 'Playfair Display'; font-size: 25px; font-weight: 400; margin: 15px 0; }
+.names small { font-size: 12px; }
+.names b { font-size: 40px; color: var(--gold); font-weight: 400; }
 
-.names span {
-  font-size: 11px;
-  letter-spacing: 3px;
-}
-
-.names h3 {
-  font-family: 'Playfair Display';
-  font-size: 25px;
-  font-weight: 400;
-  margin: 15px 0;
-}
-
-.names small {
-  font-size: 12px;
-}
-
-.names b {
-  font-size: 40px;
-  color: var(--gold);
-  font-weight: 400;
-}
-
-.event {
-  background: #eee5d8;
-}
+.event { background: #eee5d8; }
 
 .date-card {
   margin: 35px auto 0;
@@ -252,10 +197,7 @@ textarea {
   max-width: 510px;
 }
 
-.month {
-  letter-spacing: 4px;
-  font-size: 12px;
-}
+.month { letter-spacing: 4px; font-size: 12px; }
 
 .calendar {
   display: flex;
@@ -279,24 +221,11 @@ textarea {
   font-weight: 400;
 }
 
-.place {
-  font-weight: 700;
-  letter-spacing: 2px;
-}
+.place { font-weight: 700; letter-spacing: 2px; }
+.date-card p { font-size: 13px; margin: 8px 0 24px; }
 
-.date-card p {
-  font-size: 13px;
-  margin: 8px 0 24px;
-}
-
-.countdown-section {
-  background: #5c4b43;
-  color: #fff;
-}
-
-.countdown-section .eyebrow {
-  color: #e5c9a5;
-}
+.countdown-section { background: #5c4b43; color: #fff; }
+.countdown-section .eyebrow { color: #e5c9a5; }
 
 .countdown {
   display: flex;
@@ -318,31 +247,107 @@ textarea {
   font-weight: 400;
 }
 
-.countdown span {
-  font-size: 12px;
+.countdown span { font-size: 12px; }
+
+/* CSS ALBUM ẢNH 3D */
+/* CSS ALBUM ẢNH 3D - CHUẨN TONE MÀU THIỆP */
+.gallery-3d-section {
+  padding: 0 0 60px 0 !important;
+  background: var(--cream);
+  overflow: hidden;
 }
 
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 18px;
-  max-width: 1000px;
-  margin: 40px auto 0;
+.album-header {
+  background: var(--brown); /* Đã đổi từ xanh lá sang nâu ấm cùng tone thiệp */
+  padding: 18px 10px;
+  margin-bottom: 40px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
 }
 
-.gallery-grid img {
+.album-header h2 {
+  color: #fffaf1;
+  font-family: 'Playfair Display', serif;
+  letter-spacing: 4px;
+  margin: 0;
+  font-size: 1.6rem;
+  font-weight: 500;
+}
+
+.swiper {
   width: 100%;
-  height: 380px;
+  padding-top: 20px;
+  padding-bottom: 50px;
+}
+
+.swiper-slide {
+  background-position: center;
+  background-size: cover;
+  width: 300px;
+  height: 440px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba(57, 45, 41, 0.2);
+  border: 1px solid #e0d5c5;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
 }
 
-.gallery-grid img:nth-child(2) {
-  margin-top: 35px;
+/* Nút bấm điều hướng màu nâu mờ hài hòa */
+.swiper-button-next, .swiper-button-prev {
+  color: #fff !important;
+  background: rgba(107, 83, 72, 0.6);
+  width: 42px !important;
+  height: 42px !important;
+  border-radius: 50%;
+  transition: 0.3s;
 }
 
-.rsvp {
-  background: #eee5d8;
+.swiper-button-next:hover, .swiper-button-prev:hover {
+  background: var(--gold);
 }
+
+.swiper-button-next:after, .swiper-button-prev:after {
+  font-size: 16px !important;
+  font-weight: bold;
+}
+
+.swiper-pagination-bullet-active {
+  background: var(--gold) !important;
+}
+
+/* PHẦN VIDEO KỶ NIỆM */
+.video-section {
+  background: #fffaf3;
+}
+
+.video-container {
+  max-width: 800px;
+  margin: 30px auto 0;
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(107, 83, 72, 0.15);
+  border: 1px solid #d8c9b6;
+  background: #000;
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.rsvp { background: #eee5d8; }
 
 form {
   max-width: 540px;
@@ -357,9 +362,7 @@ label {
   margin-bottom: 20px;
 }
 
-input,
-select,
-textarea {
+input, select, textarea {
   display: block;
   width: 100%;
   margin-top: 8px;
@@ -370,13 +373,8 @@ textarea {
   outline-color: var(--gold);
 }
 
-form button {
-  width: 100%;
-}
-
-#formMessage {
-  font-size: 13px;
-}
+form button { width: 100%; }
+#formMessage { font-size: 13px; }
 
 .wishes {
   max-width: 540px;
@@ -399,9 +397,7 @@ form button {
   overflow-wrap: anywhere;
 }
 
-.wish-item strong {
-  display: block;
-}
+.wish-item strong { display: block; }
 
 footer {
   padding: 70px 20px;
@@ -416,9 +412,7 @@ footer h2 {
   margin: 10px;
 }
 
-footer p {
-  font-size: 12px;
-}
+footer p { font-size: 12px; }
 
 .music {
   position: fixed;
@@ -453,86 +447,30 @@ footer p {
 }
 
 @media (max-width: 650px) {
-  .section {
-    padding: 70px 20px;
-  }
-
-  .names {
-    flex-direction: column;
-    gap: 12px;
-    margin-top: 35px;
-  }
-
-  .names b {
-    font-size: 28px;
-  }
-
-  .gallery-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-  }
-
-  .gallery-grid img {
-    height: 230px;
-  }
-
-  .gallery-grid img:nth-child(2) {
-    margin-top: 0;
-  }
-
-  .gallery-grid img:last-child {
-    grid-column: 1 / -1;
-    height: 270px;
-  }
-
-  .calendar {
-    gap: 12px;
-  }
-
-  .calendar strong {
-    font-size: 70px;
-  }
-
-  .countdown {
-    gap: 8px;
-  }
-
-  .countdown > div {
-    min-width: 70px;
-    padding: 10px 5px;
-  }
-
-  .countdown strong {
-    font-size: 29px;
-  }
-
-  .hero-inner {
-    padding: 60px 10px;
-  }
-
-  .hero-date {
-    font-size: 13px;
-  }
-
+  .section { padding: 60px 20px; }
+  .names { flex-direction: column; gap: 12px; margin-top: 35px; }
+  .names b { font-size: 28px; }
+  .swiper-slide { width: 250px; height: 360px; }
+  .calendar { gap: 12px; }
+  .calendar strong { font-size: 70px; }
+  .countdown { gap: 8px; }
+  .countdown > div { min-width: 70px; padding: 10px 5px; }
+  .countdown strong { font-size: 29px; }
+  .hero-inner { padding: 60px 10px; }
+  .hero-date { font-size: 13px; }
+  
   .couple-names {
     display: flex !important;
     flex-direction: column !important;
     align-items: center;
     text-align: center;
   }
-
-  .couple-names .bride-name,
-  .couple-names .ampersand,
-  .couple-names .groom-name {
+  .couple-names .bride-name, .couple-names .ampersand, .couple-names .groom-name {
     display: block !important;
     width: 100%;
   }
-
-  .couple-names .ampersand {
-    margin: 5px 0;
-    font-size: 0.7em;
-  }
-
+  .couple-names .ampersand { margin: 5px 0; font-size: 0.7em; }
+  
   .footer-names {
     display: flex;
     flex-direction: column;
@@ -540,9 +478,5 @@ footer p {
     gap: 5px;
     line-height: 1.3;
   }
-
-  .footer-names .ampersand {
-    font-size: 0.7em;
-    font-weight: normal;
-  }
+  .footer-names .ampersand { font-size: 0.7em; font-weight: normal; }
 }

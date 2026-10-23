@@ -8,6 +8,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Thư viện Swiper cho hiệu ứng Slide ảnh 3D -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -38,6 +41,7 @@
             <a class="scroll-link" href="#story">Cuộn để khám phá ↓</a>
         </div>
     </section>
+    
     <section id="story" class="section intro reveal">
         <div class="ornament">❦</div>
         <span class="eyebrow">WE ARE GETTING MARRIED</span>
@@ -55,6 +59,7 @@
             </div>
         </div>
     </section>
+
     <section class="section event reveal">
         <span class="eyebrow">YOU ARE INVITED</span>
         <h2>Trân trọng kính mời</h2>
@@ -71,6 +76,7 @@
             <a class="button outline" target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/search/?api=1&query=9.044981043691692,105.41350910140181">XEM BẢN ĐỒ ↗</a>
         </div>
     </section>
+
     <section class="section countdown-section reveal">
         <span class="eyebrow">COUNTING DOWN</span>
         <h2>Đếm ngược ngày hạnh phúc</h2>
@@ -81,16 +87,46 @@
             <div><strong id="seconds">00</strong><span>Giây</span></div>
         </div>
     </section>
-    <section class="section gallery reveal">
-        <span class="eyebrow">OUR MEMORIES</span>
-        <h2>Album kỷ niệm</h2>
-        <p>Thay ảnh trong thư mục <code>assets</code> bằng ảnh cưới của bạn.</p>
-        <div class="gallery-grid">
-            <img src="assets/photo1.svg" alt="Ảnh cưới 1">
-            <img src="assets/photo2.svg" alt="Ảnh cưới 2">
-            <img src="assets/photo3.svg" alt="Ảnh cưới 3">
+
+    <!-- ALBUM ẢNH CƯỚI SLIDE 3D (10 ẢNH CƯỚI) -->
+    <section class="section gallery-3d-section reveal">
+        <div class="album-header">
+            <h2>ALBUM ẢNH</h2>
+        </div>
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="assets/photo1.jpg" alt="Ảnh cưới 1"></div>
+                <div class="swiper-slide"><img src="assets/photo2.jpg" alt="Ảnh cưới 2"></div>
+                <div class="swiper-slide"><img src="assets/photo3.jpg" alt="Ảnh cưới 3"></div>
+                <div class="swiper-slide"><img src="assets/photo4.jpg" alt="Ảnh cưới 4"></div>
+                <div class="swiper-slide"><img src="assets/photo5.jpg" alt="Ảnh cưới 5"></div>
+                <div class="swiper-slide"><img src="assets/photo6.jpg" alt="Ảnh cưới 6"></div>
+                <div class="swiper-slide"><img src="assets/photo7.jpg" alt="Ảnh cưới 7"></div>
+                <div class="swiper-slide"><img src="assets/photo8.jpg" alt="Ảnh cưới 8"></div>
+                <div class="swiper-slide"><img src="assets/photo9.jpg" alt="Ảnh cưới 9"></div>
+                <div class="swiper-slide"><img src="assets/photo10.jpg" alt="Ảnh cưới 10"></div>
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination"></div>
         </div>
     </section>
+
+    <!-- THƯỚC PHIM KỶ NIỆM (VIDEO) -->
+    <section class="section video-section reveal">
+        <div class="ornament">❦</div>
+        <span class="eyebrow">OUR LOVE STORY</span>
+        <h2>Thước phim kỷ niệm</h2>
+        <p>Cùng nhìn lại những khoảnh khắc ngọt ngào của chúng mình.</p>
+        <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/MÃ_VIDEO_YOUTUBE_CỦA_BẠN" 
+                    title="Video Pre-wedding" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+            </iframe>
+        </div>
+    </section>
+
     <section class="section rsvp reveal">
         <span class="eyebrow">RSVP</span>
         <h2>Xác nhận tham dự</h2>
@@ -114,6 +150,7 @@
             <div id="wishList"></div>
         </div>
     </section>
+
     <footer>
         <div class="ornament">❦</div>
         <h2 class="footer-names">
@@ -125,8 +162,12 @@
         <small>20.11.2026</small>
     </footer>
 </main>
+
 <button id="musicBtn" class="music hidden" title="Bật/tắt nhạc">♫</button>
 <audio id="music" loop preload="none" src="assets/music.mp3"></audio>
+
+<!-- JS Swiper cho Album 3D -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script type="module" src="script.js"></script>
 </body>
 </html>
