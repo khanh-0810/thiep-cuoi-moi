@@ -479,4 +479,30 @@ footer p { font-size: 12px; }
     line-height: 1.3;
   }
   .footer-names .ampersand { font-size: 0.7em; font-weight: normal; }
+  /* CSS CHO PHẦN VIDEO MP4 */
+.video-section {
+  background: #fffaf3;
+}
+
+.video-container {
+  max-width: 800px;
+  margin: 30px auto 0;
+  position: relative;
+  padding-bottom: 56.25%; /* Tỷ lệ khung hình chuẩn 16:9 */
+  height: 0;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(107, 83, 72, 0.15);
+  border: 1px solid #d8c9b6;
+  background: #000;
+}
+
+.video-container video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 }

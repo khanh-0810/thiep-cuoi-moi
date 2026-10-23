@@ -112,18 +112,18 @@
         </div>
     </section>
 
-    <!-- THƯỚC PHIM KỶ NIỆM (VIDEO) -->
+    <!-- THƯỚC PHIM KỶ NIỆM (DÙNG FILE MP4) -->
     <section class="section video-section reveal">
         <div class="ornament">❦</div>
         <span class="eyebrow">OUR LOVE STORY</span>
         <h2>Thước phim kỷ niệm</h2>
         <p>Cùng nhìn lại những khoảnh khắc ngọt ngào của chúng mình.</p>
         <div class="video-container">
-            <iframe src="https://www.youtube.com/embed/MÃ_VIDEO_YOUTUBE_CỦA_BẠN" 
-                    title="Video Pre-wedding" 
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                    allowfullscreen>
-            </iframe>
+            <video controls preload="metadata" playsinline>
+                <!-- Đảm bảo bạn đã bỏ file video vào thư mục assets và đổi tên file cho khớp -->
+                <source src="assets/wedding-video.mp4" type="video/mp4">
+                Trình duyệt của bạn không hỗ trợ thẻ video.
+            </video>
         </div>
     </section>
 

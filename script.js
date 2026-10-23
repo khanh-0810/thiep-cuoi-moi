@@ -175,3 +175,35 @@ document.getElementById('rsvpForm').addEventListener('submit', async event => {
         formMessage.style.color = 'red';
     }
 });
+// ================= TỰ ĐỘNG TẮT/BẬT NHẠC KHI XEM VIDEO MP4 =================
+const weddingVideo = document.querySelector('.video-container video');
+let isMusicPlayingBeforeVideo = false;
+
+if (weddingVideo) {
+    // Khi video bắt đầu chạy
+    weddingVideo.addEventListener('play', () => {
+        // Kiểm tra xem nhạc nền có đang phát hay không
+        if (music && !music.paused) {
+            isMusicPlayingBeforeVideo = true;
+            music.pause();
+            musicBtn?.classList.remove('playing');
+        } else {
+            isMusicPlayingBeforeVideo = false;
+        }
+    });
+
+    // Khi video dừng (pause) hoặc xem xong (ended)
+    const resumeMusic = () => {
+        if (isMusicPlayingBeforeVideo && music) {
+            music.play().then(() => {
+                musicBtn?.classList.add('playing');
+            }).catch(error => {
+                console.error('Không thể phát lại nhạc:', error);
+            });
+            isMusicPlayingBeforeVideo = false;
+        }
+    };
+
+    weddingVideo.addEventListener('pause', resumeMusic);
+    weddingVideo.addEventListener('ended', resumeMusic);
+}
